@@ -23,13 +23,16 @@ Sudoku Solving AI
 Built with CMake 3.16 and C++20. Tested on Windows and Linux.
 
 Run the following command syntax. Binaries are built into the build directory under the folder for the target platform.
->./sudoku_ai difficulty smart
+```
+./sudoku_ai <difficulty> [smart]
+```
 
-+ The difficulty argument can be of the values: "easy", "medium", "hard", or "evil"
-+ The smart argument is an optional flag that indicates whether or not to use a minimum remaining value (MRV) strategy.
++ difficulty: can be of the values: "easy," "medium," "hard," or "evil"
++ smart (optional): flag that indicates whether or not to use a minimum remaining value (MRV) strategy.
 
 Examples:
->./sudoku_ai easy
-
->./sudoku_ai hard smart
+```
+./sudoku_ai easy
+./sudoku_ai hard smart
+```
 ## Analysis
