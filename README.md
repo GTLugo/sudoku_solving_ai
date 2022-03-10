@@ -37,7 +37,11 @@ Examples:
 ```
 ## Analysis
 
-The smart search algorithm far outperforms the simple algorithm. There are orders of magnitude in difference between the run time of the simple versus smart algorithms. Additionally, the run time of the smart algorithm was far more consistent.
+The smart search algorithm far outperforms the simple algorithm. There are orders of magnitude in difference between the run time of the simple versus smart algorithms. 
+
+Additionally, the variable assignment count of the smart algorithm was astronomically lower.
+
+Overall, the smart algorithm's run time and variable assignments did not explode nearly as quickly as the simple algorithm's did, indicating much better performance.
 
 Sample output:
 ![Output of simple algorithm](https://github.com/GTLugo/cs480_hw2_cpp/blob/master/output.png)
