@@ -1,6 +1,7 @@
 # CS 480 - Assignment 2
 Sudoku Solving AI
 
+## CSP
 **Variables**
 + V = {Cell<sub>rX,rY,cX,cY</sub>}
   + rX = the column of the region in the puzzle
