@@ -28,7 +28,7 @@ Run the following command syntax. Binaries are built into the build directory un
 ```
 
 + difficulty: can be of the values: "easy," "medium," "hard," or "evil"
-+ smart (optional): flag that indicates whether or not to use a minimum remaining value (MRV) strategy.
++ smart (optional): flag that indicates whether to use a minimum remaining value (MRV) strategy.
 
 Examples:
 ```
@@ -36,3 +36,9 @@ Examples:
 ./sudoku_ai hard smart
 ```
 ## Analysis
+
+The smart search algorithm far outperforms the simple algorithm. There are orders of magnitude in difference between the run time of the simple versus smart algorithms. Additionally, the run time of the smart algorithm was far more consistent.
+
+Sample output:
+![Output of simple algorithm](https://github.com/GTLugo/cs480_hw2_cpp/blob/master/output.png)
+![Output of smart algorithm](https://github.com/GTLugo/cs480_hw2_cpp/blob/master/output_smart.png)
