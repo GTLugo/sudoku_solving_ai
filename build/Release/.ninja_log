@@ -1,0 +1,5 @@
+# ninja log v5
+5	943	6686329906419610	CMakeFiles/sudoku_ai.dir/src/sudoku/sudoku.cpp.obj	96317ac48eb9f048
+1	1058	6686329907579601	CMakeFiles/sudoku_ai.dir/src/sudoku/agent.cpp.obj	bf63a358bcec02ee
+4	1254	6686329909557946	CMakeFiles/sudoku_ai.dir/src/main.cpp.obj	db2170260c303a4d
+1255	1443	6686329911398042	Windows/sudoku_ai.exe	f0c01632bc1bf999

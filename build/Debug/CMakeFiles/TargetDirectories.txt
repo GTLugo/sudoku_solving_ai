@@ -1,0 +1,3 @@
+C:/Users/galex/OneDrive/Dev/School/cs480_hw2_cpp/build/Debug/CMakeFiles/sudoku_ai.dir
+C:/Users/galex/OneDrive/Dev/School/cs480_hw2_cpp/build/Debug/CMakeFiles/edit_cache.dir
+C:/Users/galex/OneDrive/Dev/School/cs480_hw2_cpp/build/Debug/CMakeFiles/rebuild_cache.dir
