@@ -1,5 +1,4 @@
-# CS 480 - Assignment 2
-Sudoku Solving AI
+# CS 480 - Assignment 2 - Sudoku Solving AI
 
 ## CSP
 **Variables**
