@@ -4,6 +4,14 @@
 #include "time.hpp"
 
 #include <iostream>
+#include <cstring>
+
+#ifndef WIN32
+#include "keypress_wait.hpp" // https://stackoverflow.com/questions/1449324/how-to-simulate-press-any-key-to-continue
+#else
+#include <conio.h>
+#endif
+
 
 int main(int argc, char* argv[]) {
   if (argc != 2 && argc != 3) {
@@ -35,6 +43,10 @@ int main(int argc, char* argv[]) {
     std::cout << "Failed to find solution for \"" << argv[1] << "\" after " << timeSpent << " seconds and "
       << agent.assignmentCount() << " assignments\n";
   }
+
+  std::cout << "Press any key to continue...";
+  while (!_kbhit());
+  std::cout << '\n';
 
   return 0;
 }

@@ -41,14 +41,14 @@ namespace flf {
       start_ = timePoint;
     }
 
-    template<typename Duration>
+    template<class D>
     [[nodiscard]] double startTime() const {
-      return Duration::duration((start_).time_since_epoch()).count();
+      return D((start_).time_since_epoch()).count();
     }
 
-    template<typename Duration>
+    template<class D>
     [[nodiscard]] double getTimeElapsed() const {
-      return Duration::duration((ClockSteady::now() - start_)).count();
+      return D((ClockSteady::now() - start_)).count();
     }
   private:
     TimePoint start_{};

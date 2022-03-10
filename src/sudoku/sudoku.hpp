@@ -18,7 +18,9 @@ struct Position {
 
   Position(int rx, int ry, int cx, int cy)
       : rX{rx}, rY{ry}, cX{cx}, cY{cy} {}
-  auto operator<=>(const Position&) const = default;
+  bool operator==(const Position& rhs) const {
+    return rX == rhs.rX && rY == rhs.rY && cX == rhs.cX && cY == rhs.cY;
+  }
 };
 
 namespace std {
