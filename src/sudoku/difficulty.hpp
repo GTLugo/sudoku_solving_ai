@@ -6,6 +6,7 @@
 
 #include "sudoku.hpp"
 
+// Just some static container functions for each difficulty of Sudoku puzzle
 class Difficulty {
 public:
   static inline Sudoku& easy() {

@@ -34,7 +34,7 @@ namespace std {
 
 class Cell {
 public:
-  Cell(int value = 0) : value_{value} {}
+  explicit Cell(int value = 0) : value_{value} {}
 
   [[nodiscard]] int value() const { return value_; }
   void setValue(int value) { value_ = value; }
@@ -48,16 +48,13 @@ private:
 class Sudoku {
 public:
   static const int size{3};
-  //using Board = std::array<std::array<std::array<std::array<Cell, size>, size>, size>, size>;
-  //using Board = std::unordered_map<Vec2, std::unordered_map<Vec2, Cell>>;
   using Board = std::unordered_map<Position, Cell>;
 
   Sudoku() : Sudoku({}) {}
   Sudoku(std::initializer_list<int> list);
 
   std::vector<int> validValues(const Position& pos);
-  Board& board() { return board_; }
-  //Cell& cell(int regionX, int regionY, int cellX, int cellY) { return board_[regionY][regionX][cellY][cellX]; }
+  // Board& board() { return board_; } // Unnecessary since apparently this is implicitly convertable
   Cell& cell(const Position& pos) { return board_.at(pos); }
 
   Board::iterator begin() { return board_.begin(); }

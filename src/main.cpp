@@ -14,11 +14,13 @@
 
 
 int main(int argc, char* argv[]) {
+  // Check for correct number of arguments
   if (argc != 2 && argc != 3) {
     std::cout << "Usage: ./sudoku.exe <difficulty: easy, medium, hard, evil> [smart]\n";
     return 1;
   }
 
+  // Parse arguments
   Sudoku puzzle;
   if      (strcmp(argv[1], "easy") == 0)   puzzle = Difficulty::easy();
   else if (strcmp(argv[1], "medium") == 0) puzzle = Difficulty::medium();
@@ -28,13 +30,15 @@ int main(int argc, char* argv[]) {
     std::cout << "Unknown difficulty! Usage: ./sudoku.exe <difficulty: easy, medium, hard, evil> [smart]\n";
     return 1;
   }
-
   bool smartSearch{argc == 3 && (strcmp(argv[2], "smart") == 0)};
+
+  // Solve puzzle
   Agent agent{};
   flf::Stopwatch sw{};
   auto solution{agent.solve(puzzle, smartSearch)};
   double timeSpent{sw.getTimeElapsed<flf::Seconds>()};
 
+  // Analyze solution
   if (solution.has_value()) {
     std::cout << "Found solution for \"" << argv[1] << "\" in " << timeSpent << " seconds and "
       << agent.assignmentCount() << " assignments\n"
@@ -44,6 +48,7 @@ int main(int argc, char* argv[]) {
       << agent.assignmentCount() << " assignments\n";
   }
 
+  // Pause until ready to continue
   std::cout << "Press any key to continue...";
   while (!_kbhit());
   std::cout << '\n';

@@ -11,10 +11,7 @@
 
 class Agent {
 public:
-  Agent();
-  ~Agent();
-
-  std::optional<Sudoku> solve(Sudoku puzzle, bool smart = false);
+  std::optional<Sudoku> solve(const Sudoku& puzzle, bool smart = false);
   [[nodiscard]] int assignmentCount() const { return assignmentCount_; }
 
 private:

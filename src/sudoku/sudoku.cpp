@@ -8,6 +8,7 @@
 #include <bitset>
 
 Sudoku::Sudoku(std::initializer_list<int> list) {
+  // initialize puzzle with either the values given or a default of 0
   for (int regionY{0}; regionY < Sudoku::size; ++regionY) {
     for (int cellY{0}; cellY < Sudoku::size; ++cellY) {
       for (int regionX{0}; regionX < Sudoku::size; ++regionX) {
@@ -22,16 +23,18 @@ Sudoku::Sudoku(std::initializer_list<int> list) {
 }
 
 std::vector<int> Sudoku::validValues(const Position& pos) {
+  // This method finds and returns the valid states for the cell at the given position
+
   // https://stackoverflow.com/a/802109 <- Used this algorithm to speed up this method,
   // as my original method had additional loops that cause a 7x slowdown
   // This method utilizes bit flags to keep track of which numbers are seen
   int bitFlags{0};
 
-//  for (auto pair : board_) {
-//    bitFlags |= 1 << (board_.at({pos.rX, pair.first.rY, pos.cX, pair.first.cY}).value() - 1);
-//    bitFlags |= 1 << (board_.at({pair.first.rX, pos.rY, pair.first.cX, pos.cY}).value() - 1);
-//    bitFlags |= 1 << (board_.at({pos.rX, pos.rY, pair.first.cX, pair.first.cY}).value() - 1);
-//  }
+  //for (auto pair : board_) {
+  //  bitFlags |= 1 << (board_.at({pos.rX, pair.first.rY, pos.cX, pair.first.cY}).value() - 1);
+  //  bitFlags |= 1 << (board_.at({pair.first.rX, pos.rY, pair.first.cX, pos.cY}).value() - 1);
+  //  bitFlags |= 1 << (board_.at({pos.rX, pos.rY, pair.first.cX, pair.first.cY}).value() - 1);
+  //}
 
   // column
   for (int rY{0}; rY < Sudoku::size; ++rY) {
@@ -65,6 +68,7 @@ std::vector<int> Sudoku::validValues(const Position& pos) {
 }
 
 std::ostream& operator<<(std::ostream& o, const Sudoku& puzzle) {
+  // Print a formatted puzzle board
   for (int regionY{0}; regionY < Sudoku::size; ++regionY) {
     for (int cellY{0}; cellY < Sudoku::size; ++cellY) {
       for (int regionX{0}; regionX < Sudoku::size; ++regionX) {
