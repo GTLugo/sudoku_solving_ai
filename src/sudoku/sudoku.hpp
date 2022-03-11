@@ -5,8 +5,7 @@
 #pragma once
 
 #include <iostream>
-#include <array>
-#include <vector>
+#include <bitset>
 #include <unordered_map>
 #include <initializer_list>
 
@@ -53,7 +52,7 @@ public:
   Sudoku() : Sudoku({}) {}
   Sudoku(std::initializer_list<int> list);
 
-  std::vector<int> validValues(const Position& pos);
+  std::bitset<Sudoku::size * Sudoku::size> validValues(const Position& pos);
   // Board& board() { return board_; } // Unnecessary since apparently this is implicitly convertable
   Cell& cell(const Position& pos) { return board_.at(pos); }
 

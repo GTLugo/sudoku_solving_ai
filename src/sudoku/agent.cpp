@@ -28,10 +28,12 @@ std::optional<Sudoku> Agent::backtrack(bool smart) {
 
   auto pos{unassignedPositions_.front()}; // var  SELECT-UNASSIGNED-VARIABLE(VARIABLES[csp],assignment,csp)
   auto validValues{puzzle_.validValues(pos)};
-  for (auto& value : validValues) { // for each value in ORDER-DOMAIN-VALUES(var, assignment, csp) do
-    // if value is consistent with assignment according to CONSTRAINTS[csp] then
+
+  for (int i{0}; i < validValues.size(); ++i) {// for each value in ORDER-DOMAIN-VALUES(var, assignment, csp) do
+    if (!validValues[i]) continue; // if value is consistent with assignment according to CONSTRAINTS[csp] then
+
     // Assign
-    puzzle_.cell(pos).setValue(value); // add {var=value} to assignment
+    puzzle_.cell(pos).setValue(i + 1); // add {var=value} to assignment
     ++assignmentCount_;
     unassignedPositions_.pop_front();
     if (smart) updateValuesAndSort();
@@ -67,6 +69,6 @@ void Agent::sortUnassignedPositions() {
 
 void Agent::updateValidValues() {
   for (auto& pos : unassignedPositions_) {
-    puzzle_.cell(pos).setValidValueCount(puzzle_.validValues(pos).size());
+    puzzle_.cell(pos).setValidValueCount(puzzle_.validValues(pos).count());
   }
 }
