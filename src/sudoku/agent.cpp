@@ -26,7 +26,6 @@ std::optional<Sudoku> Agent::backtrack(bool smart) {
   // Check for full solution
   if (unassignedPositions_.empty()) return puzzle_; // if assignment is complete then return assignment
 
-
   auto pos{unassignedPositions_.front()}; // var  SELECT-UNASSIGNED-VARIABLE(VARIABLES[csp],assignment,csp)
   auto validValues{puzzle_.validValues(pos)};
   for (auto& value : validValues) { // for each value in ORDER-DOMAIN-VALUES(var, assignment, csp) do
