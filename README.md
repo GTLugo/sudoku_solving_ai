@@ -37,7 +37,7 @@ Examples:
 ```
 ## Analysis
 
-The smart search algorithm far outperforms the simple algorithm. There are orders of magnitude in difference between the run time of the simple versus smart algorithms. 
+The smart search algorithm, which uses a minimum remaining value (MRV) strategy, far outperforms the simple algorithm. There are orders of magnitude in difference between the run time of the simple versus smart algorithms. 
 
 Additionally, the variable assignment count of the smart algorithm was astronomically lower.
 
